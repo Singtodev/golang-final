@@ -22,6 +22,7 @@ func NewCustomerController(router *gin.Engine) *CustomerController {
 func (c *CustomerController) RegisterRoutes() {
 	customerRouter := c.Router.Group("/customers")
 	{
-		customerRouter.PATCH("/update", c.CustomerService.UpdateCustomer)
+		customerRouter.GET("/:id/cart", c.CustomerService.GetAllCart)
+		customerRouter.POST("/:id/cart/add", c.CustomerService.AddProductToCart)
 	}
 }

@@ -28,5 +28,9 @@ func main() {
 	})
 	authController := controllers.NewAuthController(router)
 	authController.RegisterRoutes()
+	productController := controllers.NewProductController(router)
+	productController.RegisterRoutes()
+	customerController := controllers.NewCustomerController(router)
+	customerController.RegisterRoutes()
 	router.Run(":" + config.GetConfig().Server.Port)
 }
